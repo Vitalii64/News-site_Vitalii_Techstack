@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Меню</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jsForTechstack.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="spinner">
+        <div class="loader">
+        </div>
+
+        <script>
+            let spinner = document.querySelector('.spinner');
+
+            window.addEventListener('load', () => {
+                spinner.classList.add('hide');
+                setTimeout(() => { spinner.remove(); }, 600);
+            });
+        </script>
+    </div>
+
+    <header>
+
+        <div id="sidebar">
+            <div id="burger_btn" title="Открыть меню" onclick="clickBtn()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <li id="menu_1">Меню</li>
+                <li>
+                    <div class="dropdown">
+                        <div class="dropdown_categ">
+                            <a class="categories" href="#">Categories</a>
+                        </div>
+                        <div class="blockDropDown">
+                            <ul class="podmenu">
+                                <li><a href="sport.html">Sport</a></li>
+                                <li><a href="world.html">World</a></li>
+                                <li><a href="covid.html">Covid</a></li>
+                                <li><a href="business.html">Business</a></li>
+                                <li><a href="politics.html">Politics</a></li>
+                                <li><a href="science.html">Science</a></li>
+                                <li><a href="religion.html">Religion</a></li>
+                                <li><a href="health.html">Health</a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li><a class="categories" href="#">Trending News</a></li>
+            </ul>
+        </div>
+
+        <script>
+            function clickBtn() {
+                document.getElementById('sidebar').classList.toggle('active');
+            }
+        </script>
+
+        <div id="goToHead">
+            <h1><a id="head" href="index.html">News. The main thing for today!</a></h1>
+        </div>
+
+    </header>
+
+    <article>
+        <div class="articHead">
+            <a href="News.html"><img class="image" src="politics.jpg"></a>
+            <div class="write"> Статья была создана: <time pubdate datetime="14.10.2021">14 октября.</time>
+                <p>5 канал у повідомленні про скандал в «Укрексімбанку» наголосив, що керівник банку Євген Мецгер є другом
+                президента Володимира Зеленського.</p>
+                <p>Втім уже наступного дня констатував, що «навіть особиста дружба Євгена Мецгера з Володимиром Зеленським
+                не врятує першого від неминучих наслідків».
+                Про це йдеться в моніторингу щоденних теленовин за 4—9 жовтня 2021 року.</p>
+
+                <p>«Жодного дня без скандалу. Це вже майже правило для “слуг” чи для друзів президента.</p>
+                <p>Ще не перетравили офшорну тему, як сьогодні відзначився голова державного “Укрексімбанку” Євген Мецгер»,
+                — йшлося в повідомленні 5 жовтня, у день, коли відбувся інцидент із журналістами програми «Схеми:
+                корупція в деталях» в «Укрексімбанку».</p>
+                <p>В цей день про скандал повідомили 5 канал та Суспільне.
+                Втім уже наступного дня 5 канал повідомив про відсторонення Мецгера та підозру, яку йому вручили.</p>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div id="rights">All rights reserved &copy; 2021 </div>
+    </footer>
+</body>
+
+</html>

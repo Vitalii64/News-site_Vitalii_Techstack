@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Меню</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="spinner">
+        <div class="loader">
+        </div>
+
+<script>
+    let spinner = document.querySelector('.spinner');
+
+    window.addEventListener('load', () => {
+        spinner.classList.add('hide');
+        setTimeout(() => {spinner.remove();}, 600);
+    });
+</script>
+      </div>
+
+    <header>
+
+        <div id="sidebar">
+            <div id="burger_btn" title="Открыть меню" onclick="clickBtn()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <li id="menu_1">Меню</li>
+                <li>
+                    <div class="dropdown">
+                        <div class="dropdown_categ">
+                            <a class="categories" href="#">Categories</a>
+                        </div>
+                        <div class="blockDropDown">
+                            <ul class="podmenu">
+                                <li><a href="sport.html">Sport</a></li>
+                                <li><a href="world.html">World</a></li>
+                                <li><a href="covid.html">Covid</a></li>
+                                <li><a href="business.html">Business</a></li>
+                                <li><a href="politics.html">Politics</a></li>
+                                <li><a href="science.html">Science</a></li>
+                                <li><a href="religion.html">Religion</a></li>
+                                <li><a href="health.html">Health</a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li><a class="categories" href="#">Trending News</a></li>
+            </ul>
+        </div>
+
+        <script>
+            function clickBtn() {
+                document.getElementById('sidebar').classList.toggle('active');
+            }
+        </script>
+
+        <div id="goToHead">
+            <h1><a id="head" href="index.html">News. The main thing for today!</a></h1>
+        </div>
+
+    </header>
+
+    <article>
+        <div class="articHead">
+            <a href="News.html"><img class="image" src="health.jpg"></a>
+            <div class="createTime"> Статья была создана: <time pubdate datetime="14.10.2021">14 октября 2021.</time> 
+                <p>Наступление холодов зачастую чревато простудами, а чтобы не заболеть, нужно включить в рацион мед, рыбу, чай и фрукты - но это далеко не все.</p>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div id="rights">All rights reserved &copy; 2021 </div>
+    </footer>
+</body>
+</body>
+</html>

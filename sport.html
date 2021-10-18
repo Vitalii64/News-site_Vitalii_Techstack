@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Меню</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+    <div class="spinner">
+        <div class="loader">
+        </div>
+        <script>
+            let spinner = document.querySelector('.spinner');
+
+            window.addEventListener('load', () => {
+                spinner.classList.add('hide');
+                setTimeout(() => { spinner.remove(); }, 1000);
+            });
+        </script>
+    </div>
+
+    <header>
+
+        <div id="sidebar">
+            <div id="burger_btn" title="Открыть меню" onclick="clickBtn()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <li id="menu_1">Меню</li>
+                <li>
+                    <div class="dropdown">
+                        <div class="dropdown_categ">
+                            <a class="categories" href="#">Categories</a>
+                        </div>
+                        <div class="blockDropDown">
+                            <ul class="podmenu">
+                                <li><a href="sport.html">Sport</a></li>
+                                <li><a href="world.html">World</a></li>
+                                <li><a href="covid.html">Covid</a></li>
+                                <li><a href="business.html">Business</a></li>
+                                <li><a href="politics.html">Politics</a></li>
+                                <li><a href="science.html">Science</a></li>
+                                <li><a href="religion.html">Religion</a></li>
+                                <li><a href="health.html">Health</a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li><a class="categories" href="#">Trending News</a></li>
+            </ul>
+        </div>
+
+        <script>
+            function clickBtn() {
+                document.getElementById('sidebar').classList.toggle('active');
+            }
+        </script>
+
+        <div id="goToHead">
+            <h1><a id="head" href="index.html">News. The main thing for today!</a></h1>
+        </div>
+
+    </header>
+
+    <article>
+        <div class="articHead">
+            <a href="News.html"><img class="image" src="sport.png"></a>
+
+            <div id="createTime" class="sportNews"> Статья была создана: <time pubdate datetime="14.10.2021">14 октября 2021.</time>
+                <p>Главный тренер «Амура» Михаил Кравец прокомментировал поражение команды в матче регулярного
+                    чемпионата КХЛ с «Ак Барсом» (2:3 ОТ).</p>
+                <p>«Немножко растерялись в начале игры, потом команда стала хорошо двигаться, бороться, — сказал Кравец.
+                </p>
+                <p>— Достойное сопротивление оказывали Ак Барсу в первом периоде, потом добавили еще во втором, хорошо
+                    смотрелись.</p>
+                <p>Только разве что в конце второго пропущенный гол был неприятный.</p>
+                <p>Игра хорошая, скоростная, много борьбы, много моментов, много самоотверженности. </p>
+                <p>Посмотрели хороший хоккей, итог решил только овертайм. Овертайм, буллиты у нас последнее время не
+                    очень уверенно идут, второй раз подряд проигрываем. </p>
+                <p>С другой стороны, на выезде против сильной команды сыграли достойно и взяли одно очко».</p>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div id="rights">All rights reserved &copy; 2021 </div>
+    </footer>
+</body>
+
+</html>

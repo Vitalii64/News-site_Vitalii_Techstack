@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Меню</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="spinner">
+        <div class="loader">
+        </div>
+
+        <script>
+            let spinner = document.querySelector('.spinner');
+
+            window.addEventListener('load', () => {
+                spinner.classList.add('hide');
+                setTimeout(() => { spinner.remove(); }, 1000);
+            });
+        </script>
+    </div>
+
+    <header>
+
+        <div id="sidebar">
+            <div id="burger_btn" title="Открыть меню" onclick="clickBtn()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <li id="menu_1">Меню</li>
+                <li>
+                    <div class="dropdown">
+                        <div class="dropdown_categ">
+                            <a class="categories" href="#">Categories</a>
+                        </div>
+                        <div class="blockDropDown">
+                            <ul class="podmenu">
+                                <li><a href="sport.html">Sport</a></li>
+                                <li><a href="world.html">World</a></li>
+                                <li><a href="covid.html">Covid</a></li>
+                                <li><a href="business.html">Business</a></li>
+                                <li><a href="politics.html">Politics</a></li>
+                                <li><a href="science.html">Science</a></li>
+                                <li><a href="religion.html">Religion</a></li>
+                                <li><a href="health.html">Health</a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li><a class="categories" href="#">Trending News</a></li>
+            </ul>
+        </div>
+
+        <script>
+            function clickBtn() {
+                document.getElementById('sidebar').classList.toggle('active');
+            }
+        </script>
+
+        <div id="goToHead">
+            <h1><a id="head" href="index.html">News. The main thing for today!</a></h1>
+        </div>
+
+    </header>
+
+    <article>
+        <div class="articHead">
+            <div class="inputByName">Поиск по названию статьи:<input type="text" id="selectText" ="auto_layout_keyboard();">
+                <input type="button" value="Очистить" onclick="ClearFields()">
+            </div>
+            <div class="searchByName">
+                <h1>Статьи</h1>
+                <ul>
+                    <li class="searchByName"><b>новости про спорт</b></li><span>Главный тренер «Амура» Михаил Кравец
+                        прокомментировал поражение команды в матче регулярного
+                        чемпионата КХЛ с «Ак Барсом» (2:3 ОТ).....</span>
+                    <li class="searchByName"><b>новости о мире</b></li><span>Землетрясение магнитудой 4,6
+                        зарегистрировали на
+                        юго-западе Польши. Об этом сообщает
+                        Европейско-средиземноморский сейсмологический центр, передает УНН.....</span>
+                    <li class="searchByName"><b>новости о ковиде</b></li><span>Держитесь от людей на расстоянии как
+                        минимум 1
+                        метра, особенно если у них кашель, насморк и повышенная температура.....</span>
+                    <li class="searchByName"><b>новости о бизнесе</b></li><span>В сегодняшней статье мы хотели бы
+                        поделиться с
+                        вами историей успеха одной небольшой студии из Украины
+                        которая на сегодняшний день пользуются большими спросом на мировом рынке.....</span>
+                    <li class="searchByName"><b>новости о политике</b></li><span>5 канал у повідомленні про скандал в
+                        «Укрексімбанку» наголосив, що керівник банку Євген Мецгер є другом
+                        президента Володимира Зеленського.....</span>
+                    <li class="searchByName"><b>новости о науке</b></li><span>Управление древностей Израиля обнародовало
+                        итоги
+                        <li class="searchByName"><b>новости о науке</b></li><span>Управление древностей Израиля
+                            обнародовало итоги
+                            <li class="searchByName"><b>новости о науке</b></li><span>Управление древностей Израиля
+                                обнародовало итоги
+                                раскопок огромного винодельческого комплекса. ....</span>
+                            <li class="searchByName"><b>новости о религии</b></li><span>14 октября православные верующие
+                                отмечают
+                                праздник Покрова Пресвятой Богородицы.....</span>
+                            <li class="searchByName"><b>новости о здоровье</b></li><span>Наступление холодов зачастую
+                                чревато
+                                простудами, а чтобы не заболеть, нужно включить в рацион мед, рыбу, чай и фрукты - но
+                                это далеко
+                                не все....</span>
+                </ul>
+            </div>
+        </div>
+        <script>
+         /*Очистка поля*/
+            function ClearFields() {
+                document.getElementById("selectText").value = "";
+            }
+             /*Фильтр поиска при неправильной раскладке*/
+
+             document.querySelector('#selectText').oninput = function auto_layout_keyboard(srt) {
+        replacer = {
+            "q":"й", "w":"ц", "e":"у", "r":"к", "t":"е", "y":"н", "u":"г",
+            "i":"ш", "o":"щ", "p":"з", "[":"х", "]":"ъ", "a":"ф", "s":"ы",
+            "d":"в", "f":"а", "g":"п", "h":"р", "j":"о", "k":"л", "l":"д",
+            ";":"ж", "'":"э", "z":"я", "x":"ч", "c":"с", "v":"м", "b":"и",
+            "n":"т", "m":"ь", ",":"б", ".":"ю", "/":"."
+        };     
+
+        return str.replace(/[A-z/,.;\'\]\[]/g, function ( x ){
+            return x == x.toLowerCase() ? replacer[ x ] : replacer[ x.toLowerCase() ].toUpperCase();
+        });
+}
+
+            document.querySelector('#selectText').oninput = function () {
+                let val = this.value.trim();
+                let selectText = document.querySelectorAll('.searchByName li');
+                if (val != '') {
+                    selectText.forEach(function (elem) {
+                        if (elem.innerText.search(val) == -1) {
+                            elem.classList.add('hideNews')
+                            elem.innerHTML = elem.innerText;
+                        } else {
+                            elem.classList.remove('hideNews');
+                            let str = elem.innerText;
+                            elem.innerHTML = insertMark(str, elem.innerText.search(val), val.length);
+                        }
+                    });
+                } else {
+                    selectText.forEach(function (elem) {
+                        elem.classList.remove('hideNews');
+                        elem.innerHTML = elem.innerText;
+                    });
+                }
+            }
+            function insertMark(string, pos, len) {
+                return string.slice(0, pos) + '<mark>' + string.slice(pos, pos + len) + '<mark>' + string.slice(pos + len);
+            }
+
+        </script>
+    </article>
+
+    <!-- Scroll_top -->
+    <div id="scroll_top" class="isShowScroll">
+        <i class="fas fa-arrow-circle-up"></i>
+
+        <script>
+            const scrollBtn = document.querySelector('.isShowScroll');
+            scrollBtn.onclick = () => {
+                window.scrollTo(0, 0);
+            };
+        </script>
+    </div>
+
+    <footer>
+        <div id="rights">All rights reserved &copy; 2021 </div>
+    </footer>
+</body>
+
+</html>

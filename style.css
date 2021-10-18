@@ -1,0 +1,243 @@
+@charset "utf-8";
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: sans-serif;
+}
+header {
+    width: 100%;
+    height: 30%;
+    background-color: rgb(211, 211, 211);
+    float: left;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+  }
+
+#goToHead{
+    float: left;
+    text-align: center;
+    width: 100%;
+    padding-top: 1%;
+    padding-block-end: 1%;
+}
+#goToHead h1 a#head{
+    text-decoration: none;
+    color: rgb(61, 34, 71);
+}
+
+#sidebar{
+    position: fixed;
+    width: 16%; /* Чуть меньше 220px*/
+    height: 100%;
+    background-color: rgb(63, 63, 63);
+    left: -210px; /* Скрыть меню */
+    transition: all 450ms;
+    -webkit-transition: all 450ms;
+    -moz-transition: all 450ms;
+   /* border-right: rgb(230, 230, 230);*/
+}
+
+/* Меню появдяется */
+#sidebar.active{
+    left: 0px;
+}
+ul.menu{
+    list-style: none;
+}
+ul.podmenu{
+    list-style: none;
+}
+
+a.categories{
+    color: burlywood;
+    text-decoration: none;
+    margin-left: 10%;
+}
+
+/* Расположения, цвет и размер заглавия "Меню" */
+ul.menu li#menu_1:first-child{
+    font-size: 1.7em;
+    text-align: center;
+    color: rgb(254, 255, 213);
+    list-style: none;
+    padding: 25px 10px 10px 10px;
+}
+ul.menu a.categories{
+    font-size: 1.2em;
+}
+
+/* При наведении на пункты меню */
+a.categories:hover{
+    color: rgb(212, 230, 136);
+}
+div.blockDropDown ul.podmenu{
+    font-size: 1.1em;
+    margin-left: 13%;
+    padding: 5px 10px;
+}
+div.blockDropDown ul.podmenu li a{
+    text-decoration: none;
+    color: rgb(254, 255, 213);
+}
+div.blockDropDown ul.podmenu li{
+    padding: 6px;
+    color: rgb(254, 255, 213);
+}
+
+.blockDropDown{
+    margin-top: 4px;
+    margin-block-end: 5px;
+    display: none;
+    width: 160px;
+    box-shadow: 2px 8px 16px 8px rgba(223, 209, 91, 0.267);  
+}
+.dropdown:hover .blockDropDown {
+    display: block;
+}
+div.dropdown{
+    position: relative;
+}
+/*div.blockDropDown{
+display: inline-block;
+}*/
+
+/* Кнопка открывающая наше меню */
+#sidebar #burger_btn {
+    
+    border-radius: 13px;
+    padding: 10px;
+    left: 245px;
+    top: 20px;
+    background-color:rgb(95, 95, 95);
+    position: absolute;
+    cursor: pointer;
+}
+#sidebar #burger_btn span{
+    background-color: rgb(254, 255, 213);
+    margin: 5px 0px;
+    width: 25px;
+    height: 3px;
+    display: block;
+}
+#sidebar #burger_btn:hover{background: rosybrown;}
+#sidebar #burger_btn:hover span{background: slategray;}
+
+article div.articHead{
+    width: 85%;
+    height: 70%;
+    padding-top: 3%;
+    padding-block-end: 3%;
+    float: right;
+    text-align: center;
+    background-color: rgb(218, 230, 191);
+}
+.searchByName{
+    list-style: none;
+   font-size: 1.2em;
+}
+.inputByName{
+    margin: 10px;
+}
+.image{
+    width: 70%;
+    height: 47%;
+    padding-top: 2%;
+    padding-block-end: 3%;
+}
+.createTime{
+    float: inline-end;
+}
+
+#scroll_top{
+    position: fixed;
+    bottom: 150px;
+    right: 40px;
+    font-size: 40px;
+    z-index: 99;
+    color: rgb(201, 143, 201);
+}
+.isShowScroll{
+    opacity: 1;
+}
+footer{
+    color: #f0eaea;
+    width: 96%;
+    padding: 2%;
+    background-color: #666;
+    float: left;
+    height: 11%;
+}
+footer div#rights {
+    width: 25%;
+    text-align: right;
+    float:right;
+    
+}
+
+/* Spinner */
+.spinner{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ffefcf;
+    top: 0;
+    z-index: 100;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader{
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 3px solid transparent;
+      border-top-color: #A04668;
+      top: 50%;
+      left: 50%;
+      margin: -30px;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+ }  
+ .loader:before,.loader:after{
+        position: absolute;
+        content:'';
+        border: 3px solid transparent;
+        border-radius: 50%;
+      }
+      
+.loader:before{
+        border-top-color: #254E70;
+        top: -12px;
+        left: -12px;
+        right: -12px;
+        bottom: -12px;
+        animation: spin 3s linear infinite;
+ }
+      
+.loader:after{
+        border-top-color: #2e7cf1;
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;  
+        animation: spin 4s linear infinite; 
+}
+.hide{
+      opacity: 0;
+  }
+
+  @keyframes spin{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+
+.hideNews{
+    display: none;
+}
